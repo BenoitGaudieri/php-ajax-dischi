@@ -1,3 +1,8 @@
+<?php
+// include
+include_once __DIR__ . "/src/partials/database.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,14 +17,27 @@
 </head>
 
 <body>
-    <?php
-// Descrizione
-// Stampare a schermo una decina di dischi musicali (vedi grafica allegata sotto)
-// Utilizzare solo PHP per ora e non AJAX.
-// Stampa direttamente i dischi in pagina: al caricamento della pagina ci saranno tutti i dischi.
-// Utilizzare Html, Sass e PHP
-// Scegliete pure le immagini che volete utilizzare
-?>
+    <div class="card">
+        <?php
+foreach ($database as $val) {?>
+        <div class="title">
+            <?php echo $val["title"] ?>
+        </div>
+        <div class="artist">
+            <?php echo $val["artist"] ?>
+        </div>
+        <div class="year">
+            <?php echo $val["year"] ?>
+        </div>
+        <div class="img">
+            <?php echo $val["img"] ?>
+        </div>
+
+        <?php }?>
+    </div>
+
+
+    ?>
 
     <!-- Jquery -->
     <script src="js/jquery-3.5.1.min.js"></script>
