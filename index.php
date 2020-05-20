@@ -13,7 +13,7 @@ include_once __DIR__ . "/src/partials/database.php";
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
         integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
-    <link rel="stylesheet" href="src/scss/index.scss">
+    <link rel="stylesheet" href="dist/css/main.css">
 </head>
 
 <body>
@@ -21,16 +21,16 @@ include_once __DIR__ . "/src/partials/database.php";
         <?php
 foreach ($database as $val) {?>
         <div class="title">
-            <?php echo $val["title"] ?>
+            <?php echo $val["title"]; ?>
         </div>
         <div class="artist">
-            <?php echo $val["artist"] ?>
+            <?php echo $val["artist"]; ?>
         </div>
         <div class="year">
-            <?php echo $val["year"] ?>
+            <?php echo $val["year"]; ?>
         </div>
         <div class="img">
-            <?php echo $val["img"] ?>
+            <img src='<?php echo $val["img"]; ?>' alt="cover">
         </div>
 
         <?php }?>
