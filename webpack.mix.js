@@ -16,10 +16,11 @@ mix.js("src/js/main.js", "dist/js")
     .browserSync({
         proxy: false,
         watch: true,
-        server: {
-            baseDir: "./",
-            index: "index.html",
-        },
+        files: ["src/js/index.js", "src/scss/index.scss", "./*.php"],
+        notify: false,
+    })
+    .options({
+        processCssUrls: false,
     });
 
 // Full API
