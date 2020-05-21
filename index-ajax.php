@@ -1,8 +1,3 @@
-<?php
-// include
-include_once __DIR__ . "/src/partials/database.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,26 +15,21 @@ include_once __DIR__ . "/src/partials/database.php";
 
 <body>
     <div class="container">
-        <?php
-foreach ($database as $val) {?>
-        <div class="card">
-            <div class="img">
-                <img src='<?php echo $val["img"]; ?>' alt="cover">
-            </div>
-            <div class="title">
-                <?php echo $val["title"]; ?>
-            </div>
-            <div class="artist">
-                <?php echo $val["artist"]; ?>
-            </div>
-            <div class="year">
-                <?php echo $val["year"]; ?>
-            </div>
-
-        </div>
-        <?php }?>
     </div>
 
+
+    <!-- Template handlebars -->
+    <script id="disk-template" type="text/x-handlebars-template">
+        <div class="card">
+        <div class="title"><img src={{ img }} alt="cover"></div>
+        <div class="title"> {{ title }} </div>
+        <div class="artist"> {{ artist }} </div>
+        <div class="year"> {{ year }} </div>
+    </div>
+    </script>
+
+    <!-- Handlebars -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
     <script src="dist/js/main.js"></script>
 </body>
 

@@ -1,25 +1,22 @@
 <?php
 $database = [
     [
-        "title" => "Queen",
-        "artist" => "I want to break free",
-        "year" => "1975",
+        "artist" => "Queen",
+        "title" => "I want to break free",
+        "year" => "1984",
+        "img" => "https://upload.wikimedia.org/wikipedia/en/3/39/Queen_The_Works.png",
+    ],
+    [
+        "artist" => "Queen",
+        "title" => "I want to break free",
+        "year" => "1984",
         "img" => "#",
     ],
     [
-        "title" => "Queen",
-        "artist" => "I want to break free",
-        "year" => "1975",
+        "artist" => "Queen",
+        "title" => "I want to break free",
+        "year" => "1984",
         "img" => "#",
     ],
-    [
-        "title" => "Queen",
-        "artist" => "I want to break free",
-        "year" => "1975",
-        "img" => "#",
-    ],
+
 ];
-
-header("Content-Type: application/json");
-
-echo json_encode($database);
