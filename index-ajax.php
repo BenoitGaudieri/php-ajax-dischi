@@ -21,11 +21,11 @@
     <!-- Template handlebars -->
     <script id="disk-template" type="text/x-handlebars-template">
         <div class="card">
-        <div class="title"><img src={{ img }} alt="cover"></div>
-        <div class="title"> {{ title }} </div>
-        <div class="artist"> {{ artist }} </div>
-        <div class="year"> {{ year }} </div>
-    </div>
+            <div class="title"><img src={{ img }} alt="cover"></div>
+            <div class="title"> {{ title }} </div>
+            <div class="artist"> {{ artist }} </div>
+            <div class="year"> {{ year }} </div>
+        </div>
     </script>
 
     <!-- Handlebars -->
