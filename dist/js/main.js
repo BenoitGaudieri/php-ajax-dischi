@@ -10956,15 +10956,35 @@ return jQuery;
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
   // Ref
-  var container = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".container"); // Init handlebars
+  var container = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".container");
+  var filter = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".filter"); // Init handlebars
 
   var source = jquery__WEBPACK_IMPORTED_MODULE_0___default()("#disk-template").html();
-  var template = Handlebars.compile(source); // Get data from php
+  var template = Handlebars.compile(source);
+  ajaxCall(template, container);
+  filter.on("change", function () {
+    container.html("");
+    var artist = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).val();
+    getAlbums(artist, template, container);
+  }); //
+}); //end doc ready
+// Get data from php
 
+function ajaxCall() {
+  var artist = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "all";
+  var template = arguments.length > 1 ? arguments[1] : undefined;
+  var container = arguments.length > 2 ? arguments[2] : undefined;
   jquery__WEBPACK_IMPORTED_MODULE_0___default().ajax({
     url: "http://localhost:3000/esercizi/php-ajax-dischi/script.php",
     method: "GET",
     success: function success(res) {
+      if (artist !== "all") {
+        res = res.filter(function (item) {
+          return artist === item.artist;
+        });
+        console.log(res);
+      }
+
       for (var i = 0; i < res.length; i++) {
         var el = res[i]; // handlebars
 
@@ -10983,8 +11003,8 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
     error: function error(err) {
       console.log("Error:", err);
     }
-  }); //
-}); //end doc ready
+  });
+}
 })();
 
 (() => {

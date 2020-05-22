@@ -17,6 +17,11 @@
     <div class="container">
     </div>
 
+    <select name="" id="" class="filter">
+        <option value="Queen">Queen</option>
+        <option value="Iron Maiden">Iron Maiden</option>
+    </select>
+
 
     <!-- Template handlebars -->
     <script id="disk-template" type="text/x-handlebars-template">

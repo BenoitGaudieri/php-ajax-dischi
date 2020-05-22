@@ -7,7 +7,7 @@ $database = [
         "img" => "https://upload.wikimedia.org/wikipedia/en/3/39/Queen_The_Works.png",
     ],
     [
-        "artist" => "Queen",
+        "artist" => "Iron Maiden",
         "title" => "I want to break free",
         "year" => "1984",
         "img" => "#",

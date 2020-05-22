@@ -3,16 +3,34 @@ import $ from "jquery";
 $(document).ready(function() {
     // Ref
     var container = $(".container");
+    var filter = $(".filter");
 
     // Init handlebars
     var source = $("#disk-template").html();
     var template = Handlebars.compile(source);
 
-    // Get data from php
+    ajaxCall(template, container);
+
+    filter.on("change", function() {
+        container.html("");
+        var artist = $(this).val();
+        getAlbums(artist, template, container);
+    });
+
+    //
+}); //end doc ready
+
+// Get data from php
+function ajaxCall(artist = "all", template, container) {
     $.ajax({
         url: "http://localhost:3000/esercizi/php-ajax-dischi/script.php",
         method: "GET",
         success: function(res) {
+            if (artist !== "all") {
+                res = res.filter((item) => artist === item.artist);
+                console.log(res);
+            }
+
             for (let i = 0; i < res.length; i++) {
                 const el = res[i];
 
@@ -35,6 +53,4 @@ $(document).ready(function() {
             console.log("Error:", err);
         },
     });
-
-    //
-}); //end doc ready
+}
